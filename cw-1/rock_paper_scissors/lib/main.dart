@@ -99,7 +99,7 @@ class _RPSState extends State<RPS> {
 
                     results = player1 > player2
                         ? "Player 1 wins!"
-                        : player2 < player1
+                        : player2 > player1
                             ? "Player 2 wins!"
                             : "It's a draw. Play again.";
                   },
@@ -111,9 +111,12 @@ class _RPSState extends State<RPS> {
               ),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.only(top: 50),
-            child: Text("$results", style: TextStyle(fontSize: 30)),
+          GestureDetector(
+            onTap: () {},
+            child: Padding(
+              padding: EdgeInsets.only(top: 50),
+              child: Text("$results", style: TextStyle(fontSize: 30)),
+            ),
           ),
         ],
       ),
