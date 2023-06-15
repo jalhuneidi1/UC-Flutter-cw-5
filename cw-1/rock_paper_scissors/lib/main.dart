@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -27,75 +25,8 @@ class RPS extends StatefulWidget {
 }
 
 class _RPSState extends State<RPS> {
-  int player1 = 1;
-  int player2 = 2;
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.orange.shade50,
-      appBar: AppBar(
-        backgroundColor: Colors.orange,
-        title: Text(
-          "Rock, Paper, Scissors",
-        ),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                child: Column(
-                  children: [
-                    Image.asset(
-                      'assets/images/i_$player1.png',
-                      height: 100,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 30),
-                      child: Text("Player 1"),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 100,
-              ),
-              Container(
-                child: Column(
-                  children: [
-                    Image.asset(
-                      'assets/images/i_$player2.png',
-                      height: 100,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 30),
-                      child: Text("Player 2"),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 100, width: 100),
-          Container(
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
-              onPressed: () {
-                setState(
-                  () {
-                    player1 = Random().nextInt(3) + 1;
-                    player2 = Random().nextInt(3) + 1;
-                  },
-                );
-              },
-              child: Text("Play"),
-            ),
-          ),
-        ],
-      ),
-    );
+    return const Placeholder();
   }
 }
