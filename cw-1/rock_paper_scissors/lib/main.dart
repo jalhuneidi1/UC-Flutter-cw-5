@@ -29,6 +29,7 @@ class RPS extends StatefulWidget {
 class _RPSState extends State<RPS> {
   int player1 = 1;
   int player2 = 2;
+  String? results;
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +51,7 @@ class _RPSState extends State<RPS> {
                 child: Column(
                   children: [
                     Image.asset(
-                      'assets/images/i_$player1.png',
+                      'assets/i_$player1.png',
                       height: 100,
                     ),
                     Padding(
@@ -67,7 +68,7 @@ class _RPSState extends State<RPS> {
                 child: Column(
                   children: [
                     Image.asset(
-                      'assets/images/i_$player2.png',
+                      'assets/i_$player2.png',
                       height: 100,
                     ),
                     Padding(
@@ -81,6 +82,7 @@ class _RPSState extends State<RPS> {
           ),
           SizedBox(height: 100, width: 100),
           Container(
+            width: 100,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
               onPressed: () {
@@ -88,11 +90,21 @@ class _RPSState extends State<RPS> {
                   () {
                     player1 = Random().nextInt(3) + 1;
                     player2 = Random().nextInt(3) + 1;
+
+                    results = player1 > player2
+                        ? "player 1 wins!"
+                        : player2 < player1
+                            ? "Player 2 wins!"
+                            : "Draw. Play Again.";
                   },
                 );
               },
               child: Text("Play"),
             ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 50),
+            child: Text("$results", style: TextStyle(fontSize: 30)),
           ),
         ],
       ),
