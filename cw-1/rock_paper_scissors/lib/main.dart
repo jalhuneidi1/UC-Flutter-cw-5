@@ -56,13 +56,16 @@ class _RPSState extends State<RPS> {
                     ),
                     Padding(
                       padding: EdgeInsets.only(top: 30),
-                      child: Text("Player 1"),
+                      child: Text(
+                        "Player 1",
+                        style: TextStyle(fontSize: 15),
+                      ),
                     ),
                   ],
                 ),
               ),
               SizedBox(
-                width: 100,
+                width: 75,
               ),
               Container(
                 child: Column(
@@ -73,16 +76,19 @@ class _RPSState extends State<RPS> {
                     ),
                     Padding(
                       padding: EdgeInsets.only(top: 30),
-                      child: Text("Player 2"),
+                      child: Text(
+                        "Player 2",
+                        style: TextStyle(fontSize: 15),
+                      ),
                     ),
                   ],
                 ),
               ),
             ],
           ),
-          SizedBox(height: 100, width: 100),
+          SizedBox(height: 75, width: 100),
           Container(
-            width: 100,
+            width: 150,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
               onPressed: () {
@@ -92,14 +98,17 @@ class _RPSState extends State<RPS> {
                     player2 = Random().nextInt(3) + 1;
 
                     results = player1 > player2
-                        ? "player 1 wins!"
+                        ? "Player 1 wins!"
                         : player2 < player1
                             ? "Player 2 wins!"
-                            : "Draw. Play Again.";
+                            : "It's a draw. Play again.";
                   },
                 );
               },
-              child: Text("Play"),
+              child: Text(
+                "Play",
+                style: TextStyle(fontSize: 20),
+              ),
             ),
           ),
           Padding(
