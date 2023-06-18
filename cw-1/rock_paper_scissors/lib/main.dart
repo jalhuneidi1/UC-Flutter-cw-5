@@ -97,11 +97,16 @@ class _RPSState extends State<RPS> {
                     player1 = Random().nextInt(3) + 1;
                     player2 = Random().nextInt(3) + 1;
 
-                    results = player1 > player2
+                    results = player1 == 1 && player2 = 3
                         ? "Player 1 wins!"
-                        : player2 > player1
+                        : player1 == 2 && player1 == 1
                             ? "Player 2 wins!"
-                            : "It's a draw. Play again.";
+                            : player1 == 3 && player2 == 2 
+                              ? "Player 1 wins" 
+                              : player1 == player2 
+                                ? "It's a draw. Play again." 
+                                : "Player 2 Wins";
+                  
                   },
                 );
               },
